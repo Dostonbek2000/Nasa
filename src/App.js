@@ -1,25 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import ParticlesPAge from './components/Particles/Particles';
+import Home from './components/Home/Home';
+import Detail from './components/Detail/Detail';
 
-function App() {
+
+const App = () => {
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+       <Routes>
+          <Route path='/'  element={<ParticlesPAge />}/>
+          <Route path='/home'  element={<Home />}/>
+          <Route path='/detail'  element={<Detail />}/>
+       </Routes>
+    </BrowserRouter>
   );
-}
+};
 
-export default App;
+export default App
